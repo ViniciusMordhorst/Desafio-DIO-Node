@@ -1,0 +1,34 @@
+// Função que calcula o saldo de vitórias e determina o nível do jogador
+function calcularNivel(vitorias, derrotas) {
+  // Calcular o saldo de vitórias
+  let saldoVitorias = vitorias - derrotas;
+
+  // Determinar o nível com base no número de vitórias
+  let nivel = '';
+
+  if (vitorias < 10) {
+    nivel = 'Ferro';
+  } else if (vitorias >= 10 && vitorias <= 20) {
+    nivel = 'Bronze';
+  } else if (vitorias >= 21 && vitorias <= 50) {
+    nivel = 'Prata';
+  } else if (vitorias >= 51 && vitorias <= 80) {
+    nivel = 'Ouro';
+  } else if (vitorias >= 81 && vitorias <= 90) {
+    nivel = 'Diamante';
+  } else if (vitorias >= 91 && vitorias <= 100) {
+    nivel = 'Lendário';
+  } else if (vitorias >= 101) {
+    nivel = 'Imortal';
+  }
+
+  // Retornar a mensagem com o nível do jogador
+  return `O Herói tem de saldo de ${saldoVitorias} vitórias e está no nível de ${nivel}`;
+}
+
+// Teste da função com valores de vitórias e derrotas
+let vitorias = 75;  // Exemplo de número de vitórias
+let derrotas = 30;  // Exemplo de número de derrotas
+
+// Chamada da função e exibição do resultado
+console.log(calcularNivel(vitorias, derrotas));  // Exibe o nível do jogador
